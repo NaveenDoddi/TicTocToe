@@ -70,6 +70,6 @@ function run(){
 
     }
 
-    console.log(redarr,blackarr);
+    // console.log(redarr,blackarr);
 }
 
