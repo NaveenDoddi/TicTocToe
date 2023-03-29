@@ -1,65 +1,66 @@
 
-var bool = true;
-var count = 0;
+var count = Math.floor(Math.random() * 2);
 function handleClick(clickedElement) {
     
-    if(bool){
-        console.log("red")
-        clickedElement.style.accentColor= "red"
-        bool = false;
+    if(count == 0){
+        clickedElement.style.accentColor= "red";
+        console.log(clickedElement.style.accentColor);
+        count = 1;
     }else{
         
-        clickedElement.style.accentColor = "black"
-        console.log(clickedElement.style.accentColor)
-        bool = true;
+        clickedElement.style.accentColor = "black";
+        console.log(clickedElement.style.accentColor);
+        count = 0;
 
     }
-    count++
   
 }
-var arr = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[3,5,7],[1,5,9]]
+var arr = [[1,2,3,0,0],[4,5,6,0,0],[7,8,9,0,0],[1,4,7,0,0],[2,5,8,0,0],[3,6,9,0,0],[3,5,7,0,0],[1,5,9]];
 
 function run(){
-    var redarr = []
-    var blackarr = []
+    var redarr = [];
+    var blackarr = [];
     for(let i = 1; i<10; i++){
-        // arr1.push(document.getElementById("id"+i))
-        var color = document.getElementById(i).style.accentColor
-        var id = document.getElementById(i).id
+        var color = document.getElementById(i).style.accentColor;
+        var id = document.getElementById(i).id;
         if(color == "red"){
-            redarr.push(id)
+            redarr.push(id);
         }else if(color == "black"){
-            blackarr.push(id)
+            blackarr.push(id);
         }
     }
-    redarr = redarr.sort()
-    blackarr = blackarr.sort()
-    var redcount = 0
-    var blackcount = 0
+    
     for(let j=0; j<8; j++){
-        for(let x=0; x<redarr.length; x++){
-            console.log(arr[j][x])
+        var redcount = 0;
+        for(let x = 0; x < redarr.length; x++){
             if(arr[j][x] == redarr[x]){
-                redcount++
+                redcount++;
+            }
+            if(redcount==3){
+                var para = document.createElement("h3");
+                para.innerText = "kottav po red";
+                document.body.append(para)
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+                
             }
         }
-    }
-    for(let j=0; j<8; j++){
-        for(let x=0; x<blackcount.length; x++){
-            console.log(arr[j][x])
+        var blackcount = 0;
+        for(let x = 0; x < blackarr.length; x++){
             if(arr[j][x] == blackarr[x]){
-                blackcount++
+                blackcount++;
+            }
+            if(blackcount == 3){
+                var para = document.createElement("h3");
+                para.innerText = "kottav po black";
+                document.body.append(para)
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             }
         }
     }
-    if(redcount==3){
-        alert("red winner")
-    }
-    if(blackcount == 3){
-        alert("black wiiner")
-    }
-    var charan = [1,2,3]
-    var naveen = [1,2,3]
-    console.log(charan==naveen)
-    console.log(redarr,blackarr)
+
+    console.log(redarr,blackarr);
 }
