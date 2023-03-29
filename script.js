@@ -15,7 +15,7 @@ function handleClick(clickedElement) {
     }
   
 }
-var arr = [[1,2,3,0,0],[4,5,6,0,0],[7,8,9,0,0],[1,4,7,0,0],[2,5,8,0,0],[3,6,9,0,0],[3,5,7,0,0],[1,5,9,0,0]];
+var arr = [[1,2,3,0,0],[4,5,6,0,0],[7,8,9,0,0],[1,4,7,0,0],[2,5,8,0,0],[3,6,9,0,0],[1,5,9,0,0],[3,5,7,0,0]];
 
 function run(){
     var redarr = [];
@@ -30,15 +30,15 @@ function run(){
         }
     }
     
-    for(let j=0; j<8; j++){
+    for(let i=0; i<8; i++){
         var redcount = 0;
-        for(let x = 0; x < redarr.length; x++){
-            if(arr[j][x] == redarr[x]){
+        for(let j = 0; j < redarr.length; j++){
+            if(arr[i][j] == redarr[j]){
                 redcount++;
             }
-            if(redcount==3){
+            if(redcount == 3){
                 var para = document.createElement("h3");
-                para.innerText = "kottav po red";
+                para.innerText = "Red-Winner";
                 document.body.append(para)
                 setTimeout(() => {
                     window.location.reload();
@@ -47,13 +47,13 @@ function run(){
             }
         }
         var blackcount = 0;
-        for(let x = 0; x < blackarr.length; x++){
-            if(arr[j][x] == blackarr[x]){
+        for(let j = 0; j < blackarr.length; j++){
+            if(arr[i][j] == blackarr[j]){
                 blackcount++;
             }
             if(blackcount == 3){
                 var para = document.createElement("h3");
-                para.innerText = "kottav po black";
+                para.innerText = "Black-Winner";
                 document.body.append(para)
                 setTimeout(() => {
                     window.location.reload();
