@@ -37,16 +37,23 @@ function run(){
                 if(arr[i][j] == redarr[x]){
                     redcount++;
                 }
-            }
+                if(redcount == 3){
+                    
+                    // console.log(arr[i]);
+                    for(let y = 0 ; y<3; y++){
+                        document.getElementById(arr[i][y]).id = "yes"
+                    }
+                    
+                    var para = document.createElement("h3");
+                    para.innerText = "Red-Winner";
+                    document.body.append(para)
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                }
             
-        }
-        if(redcount == 3){
-            var para = document.createElement("h3");
-            para.innerText = "Red-Winner";
-            document.body.append(para)
-            setTimeout(() => {
-                window.location.reload();
-            }, 2000);
+            }
+        
             
         }
 
@@ -56,21 +63,24 @@ function run(){
                 if(arr[i][j] == blackarr[x]){
                     blackcount++;
                 }
+                if(blackcount == 3){
+                    for(let y = 0 ; y<3; y++){
+                        document.getElementById(arr[i][y]).id = "yes"
+                    }
+
+                    var para = document.createElement("h3");
+                    para.innerText = "Black-Winner";
+                    document.body.append(para)
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                }
                 
             }
         }
-        if(blackcount == 3){
-            var para = document.createElement("h3");
-            para.innerText = "Black-Winner";
-            document.body.append(para)
-            setTimeout(() => {
-                window.location.reload();
-            }, 2000);
-        }
+
 
     }
 
-    console.log(redarr,blackarr);
-    // commmiting nth time
 }
 
