@@ -39,17 +39,15 @@ function run(){
                 }
                 if(redcount == 3){
                     
-                    // console.log(arr[i]);
                     for(let y = 0 ; y<3; y++){
                         document.getElementById(arr[i][y]).id = "yes"
                     }
                     
-                    var para = document.createElement("h3");
-                    para.innerText = "Red-Winner";
-                    document.body.append(para)
+                    document.getElementById("result").innerText = "Red-Winner";
+                    document.getElementById("result").style.color = "red"
                     setTimeout(() => {
                         window.location.reload();
-                    }, 2000);
+                    }, 3000);
                 }
             
             }
@@ -68,12 +66,12 @@ function run(){
                         document.getElementById(arr[i][y]).id = "yes"
                     }
 
-                    var para = document.createElement("h3");
-                    para.innerText = "Black-Winner";
-                    document.body.append(para)
+                    document.getElementById("result").innerText = "Black-Winner";
+                    document.getElementById("result").style.color = "balck"
+
                     setTimeout(() => {
                         window.location.reload();
-                    }, 2000);
+                    }, 3000);
                 }
                 
             }
