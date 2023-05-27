@@ -21,12 +21,17 @@ h2{
 }
 
 
- body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
- table{
-    background-color: #009dff;
-    
- }
+body{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+table{
+   background-color: #009dff;
+   
+}
+
+.yes{
+    height: 55px;
+    width: 55px;
+}

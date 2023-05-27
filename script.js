@@ -40,7 +40,7 @@ function run(){
                 if(redcount == 3){
                     
                     for(let y = 0 ; y<3; y++){
-                        document.getElementById(arr[i][y]).id = "yes"
+                        document.getElementById(arr[i][y]).className = "yes"
                     }
                     
                     document.getElementById("result").innerText = "Red-Winner";
