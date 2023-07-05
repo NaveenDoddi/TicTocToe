@@ -1,16 +1,27 @@
 
 var count = Math.floor(Math.random() * 2);
+var count1 = 0
 function handleClick(clickedElement) {
     
     if(count == 0){
-        clickedElement.style.accentColor= "red";
-        // console.log(clickedElement.style.accentColor);
-        count = 1;
+        console.log(clickedElement.style.accentColor);
+        if(clickedElement.style.accentColor != "black"){
+            clickedElement.style.accentColor= "red";
+            count = 1;
+            count1++;
+        }
+        
+       
+        
 
     }else{
-        clickedElement.style.accentColor = "black";
-        // console.log(clickedElement.style.accentColor);
-        count = 0;
+        console.log(clickedElement.style.accentColor);
+        if(clickedElement.style.accentColor != "red"){
+            clickedElement.style.accentColor = "black";
+            count = 0;
+            count1++;
+        }
+        
 
     }
   
@@ -18,6 +29,7 @@ function handleClick(clickedElement) {
 var arr = [[1,2,3,0,0],[4,5,6,0,0],[7,8,9,0,0],[1,4,7,0,0],[2,5,8,0,0],[3,6,9,0,0],[1,5,9,0,0],[3,5,7,0,0]];
 
 function run(){
+
     var redarr = [];
     var blackarr = [];
     for(let i = 1; i < 10; i++){
@@ -78,6 +90,12 @@ function run(){
         }
 
 
+    }
+    if(count1 == 9){
+        document.getElementById("result").innerText = "Try Again!!!";
+        setTimeout(() => {
+            window.location.reload();
+        }, 3000);
     }
 
 }
