@@ -11,9 +11,6 @@ function handleClick(clickedElement) {
             count1++;
         }
         
-       
-        
-
     }else{
         console.log(clickedElement.style.accentColor);
         if(clickedElement.style.accentColor != "red"){
@@ -26,6 +23,7 @@ function handleClick(clickedElement) {
     }
   
 }
+
 var arr = [[1,2,3,0,0],[4,5,6,0,0],[7,8,9,0,0],[1,4,7,0,0],[2,5,8,0,0],[3,6,9,0,0],[1,5,9,0,0],[3,5,7,0,0]];
 
 function run(){
